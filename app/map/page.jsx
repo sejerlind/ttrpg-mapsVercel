@@ -1,4 +1,4 @@
-import OrderBtn from "../components/OrderBtn";
+import OrderBtn from "../components/orderBtn";
 import AllMaps from "../components/allMaps";
 
 export default function Tickets({searchParams}) {
