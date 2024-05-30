@@ -1,0 +1,52 @@
+@import "_Color.scss";
+
+.hero_section {
+    position: relative;
+}
+
+.hero_text_wrapper {
+    position: absolute;
+    padding: 22px 55px;
+    backdrop-filter: blur(10px);
+    max-width: 550px;
+    border-radius: 33px;
+    top: 200px;
+    left: 50px;
+    z-index: 1;
+}
+
+.test {
+    height:1000px;background-color:red;font-size:36px
+}
+
+.hero_cta {
+    display: inline-block;
+    color: $colorBlack;
+    background-color: $colorOffGreen;
+    padding: 16px 30px;
+    border-radius: 30px;
+    border: 2px solid transparent;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    margin-right: 25px;
+    transition: all .2s;
+    &:hover {
+        color: $colorBlack;
+        background-color: transparent;
+        border: 2px solid $colorOffGreen;
+    }
+
+}
+
+.hero_cta_sec {
+    border: 2px solid $colorOffGreen;
+    background-color: transparent;
+    color: $colorWhite;
+    transition: all .2s;
+    &:hover {
+        color: $colorBlack;
+        background-color: $colorOffGreen;
+        border: 2px solid transparent;
+    }
+}

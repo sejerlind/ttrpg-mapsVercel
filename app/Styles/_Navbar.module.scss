@@ -1,0 +1,23 @@
+@import "_Color.scss";
+
+.navbar {
+    display: block;
+    width: 100%;
+    padding: 20px 75px;
+    position: fixed;
+    background-color: rgba($colorWhite, 0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+.linkwrapper {
+    display: flex;
+    gap: 15px;
+    a {
+        color: $colorBlack;
+        font-weight: 600;
+        text-decoration: none;
+    }
+}
