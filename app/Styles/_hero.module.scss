@@ -19,34 +19,49 @@
     height:1000px;background-color:red;font-size:36px
 }
 
-.hero_cta {
-    display: inline-block;
-    color: $colorBlack;
-    background-color: $colorOffGreen;
-    padding: 16px 30px;
-    border-radius: 30px;
-    border: 2px solid transparent;
-    font-weight: 600;
-    font-size: 16px;
-    text-decoration: none;
-    margin-right: 25px;
+.hero_cta_wrapper {
+    display: flex;
+    gap: 10px;
     transition: all .2s;
-    &:hover {
-        color: $colorBlack;
-        background-color: transparent;
-        border: 2px solid $colorOffGreen;
-    }
 
-}
-
-.hero_cta_sec {
-    border: 2px solid $colorOffGreen;
-    background-color: transparent;
-    color: $colorWhite;
-    transition: all .2s;
-    &:hover {
+    .hero_cta {
+        display: flex;
+        align-items: center;
         color: $colorBlack;
         background-color: $colorOffGreen;
+        padding: 16px 30px;
+        border-radius: 30px;
         border: 2px solid transparent;
+        font-weight: 600;
+        font-size: 16px;
+        text-decoration: none;
+        transition: all .2s;
+        svg {
+            font-size: 25px;
+        }
+        &:hover {
+            color: $colorWhite;
+            background-color: transparent;
+            border: 2px solid $colorOffGreen;
+            transition: all .2s;
+            // svg {
+            //     font-size: 250px;
+            // }
+        }
+    
+    
     }
+    
+    .hero_cta_sec {
+        border: 2px solid $colorOffGreen;
+        background-color: transparent;
+        color: $colorWhite;
+        transition: all .2s;
+        &:hover {
+            color: $colorBlack;
+            background-color: $colorOffGreen;
+            border: 2px solid transparent;
+            transition: all .2s;
+        }
+    }   
 }

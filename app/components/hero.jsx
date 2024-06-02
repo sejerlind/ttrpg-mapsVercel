@@ -1,6 +1,8 @@
+import { MdArrowRightAlt } from "react-icons/md";
 import Supabase from "../config/supabaseClient";
 import styles from '../Styles/_hero.module.scss';
 import Link from "next/link";
+import Rnadombtn from "./rnadombtn";
 
 export default async function Hero() {
   // Fetch maps data
@@ -18,7 +20,11 @@ export default async function Hero() {
   }
 
   // Log the id of all maps
-  const randomMapId = maps[Math.floor(Math.random() * maps.length)].id;
+
+  function randomMapIdFunc() {
+    let randomMapId = maps[Math.floor(Math.random() * maps.length)].id;
+
+  }
 
   // Fetch hero data
   const { data: hero, error } = await Supabase
@@ -35,17 +41,19 @@ export default async function Hero() {
     return <p>No hero data found.</p>;
   }
 
+ 
+
   return (
     <>
       <div className={styles.hero_section}>
         <div className={styles.hero_text_wrapper}>
           <h1>{hero.hero_heading}</h1>
           <p>{hero.hero_text}</p>
-          {hero.image && 
-            <>
-              <Link className={`${styles.hero_cta}`} href={hero.hero_cta_prim_link}>{hero.hero_cta_prim}</Link>
-              <Link className={`${styles.hero_cta} ${styles.hero_cta_sec}`} href={"/map/"+randomMapId}>{hero.hero_cta_sec}</Link>
-            </>
+          {hero.hero_cta_prim && 
+              <div className={styles.hero_cta_wrapper}>
+                <Link className={`${styles.hero_cta}`} href={hero.hero_cta_prim_link}>{hero.hero_cta_prim}<MdArrowRightAlt/></Link>
+                <Rnadombtn maps={maps} hero={hero}/>
+              </div>
           }
         </div>
 
