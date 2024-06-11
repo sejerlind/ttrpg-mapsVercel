@@ -23,7 +23,10 @@ body {
 }
 
 main {
-    padding: 0;
+    padding: 0 15px;
     margin: 0 auto;
-    max-width: 1280px;
+    @media only screen and (min-width: 600px) {
+        padding: 0;
+    }
+
 }

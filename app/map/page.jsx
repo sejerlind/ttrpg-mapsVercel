@@ -1,15 +1,21 @@
-import OrderBtn from "../components/orderBtn";
 import AllMaps from "../components/allMaps";
+import SelectedMaps from "../components/selectedMaps";
+import Search from "../components/searchMaps";
+import { Suspense } from "react"
+
 
 export default function Tickets({searchParams}) {
 
-  const currentOrder = searchParams?.order || "created_at";
-
+  const limt = searchParams?.limt || '';
 
   return (
     <main>
-     < OrderBtn />
-      <AllMaps currentOrder={currentOrder}/>
+      {/* //knap load more  add loader til Suspense*/}
+      <Suspense>
+        <AllMaps limt={limt} />
+      </Suspense>
+      <Search />
+
     </main>
   )
 }

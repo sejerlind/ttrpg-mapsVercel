@@ -1,0 +1,136 @@
+@import "_Color.scss";
+
+.selected_wrapper {
+    padding: 60px  0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: flex-start;
+    .selected_maps_card {
+        background-color: pink;
+    }
+    .selected_maps_span {
+        margin: 0 auto;
+        width: 400px;
+        height: 392px;
+        background-repeat: no-repeat;
+        position: relative;
+        animation: imageMove 12S linear infinite;
+        overflow: hidden;
+        cursor: pointer;
+        &:hover {
+          svg {
+            animation: arrowMove 2s ease infinite;
+        }
+        }
+    }
+    .selected_banner {
+        position: absolute;
+        top: 0;
+        background-color: $colorRed;
+        color: $colorWhite;
+        padding: 0 12px;
+        width: 100%;
+        text-align: center;
+        transform: translate(-100px, 50px) rotate(325deg);
+        height: 60px;
+        p {
+          animation: textSize 2s ease infinite;
+        }
+        
+    }
+    .selected_banner_info {
+      background-color: $colorWhite;
+      width: 100%;
+      padding: 20px 16px;
+      color: $colorBlack;
+      opacity:  .8;
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      cursor: pointer;
+      h4 {
+        margin: 0;
+      }
+      svg {
+        font-size: 25px;
+      }
+   
+    }
+}
+
+@keyframes textSize {
+	0% {
+		font-size: 100%;
+	}
+	50% {
+		font-size: 120%;
+	}
+	100% {
+		font-size: 100%;
+	}
+}
+
+@keyframes arrowMove {
+  0% { transform: translateX(0%); }
+  15% { transform: translateX(-25%) rotate(-5deg); }
+  30% { transform: translateX(20%) rotate(3deg); }
+  45% { transform: translateX(-15%) rotate(-3deg); }
+  60% { transform: translateX(10%) rotate(2deg); }
+  75% { transform: translateX(-5%) rotate(-1deg); }
+  100% { transform: translateX(0%); }
+}
+
+
+@keyframes imageMove {
+    0% {
+        background-position: 36% 42%;
+        background-size: 200%;
+      }
+      
+      20% {
+        background-position: 30% 35%;
+        background-size: 200%;
+      }
+      
+      20.0001% { /* -- View 2 -- */
+        background-position: 60% 85%;
+        background-size: 500%;
+      }
+      
+      40% {
+        background-position: 49% 81%;
+        background-size: 500%;
+      }
+      
+      40.0001% { /* -- View 3 -- */
+        background-position: 80% 42%;
+        background-size: 300%;
+      }
+      
+      60% {
+        background-position: 84% 33%;
+        background-size: 300%;
+      }
+      
+      60.0001% { /* -- View 4 -- */
+        background-position: 0% 0%;
+        background-size: 300%;
+      }
+      
+      80% {
+        background-position: 15% 4%;
+        background-size: 300%;
+      }
+      
+      80.0001% { /* -- View 5 -- */
+        background-position: 80% 10%;
+        background-size: 300%;
+      }
+      
+      100% {
+        background-position: 72% 14%;
+        background-size: 300%;
+      }
+  }
